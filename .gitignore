@@ -351,3 +351,12 @@ MigrationBackup/
 
 # VScode
 .vscode/
+
+# Build
+build/
+Makefile
+
+# CMakeFiles
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
