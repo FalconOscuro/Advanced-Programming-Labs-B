@@ -7,6 +7,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/build/bin")
 
 # Lab files
 add_executable(Good-Streaming ./01-Good-Streaming/Good-Streaming.cpp)
+add_executable(Bad-Streaming ./02-Bad-Streaming/Bad-Streaming.cpp)
 
 # Lab Book using LaTeX
 find_package(LATEX)
