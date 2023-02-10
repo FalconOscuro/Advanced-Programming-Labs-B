@@ -19,5 +19,5 @@ int main(int argn, char* argv[])
 	// output the int and float to the console
 	cout << "i=" << i << ", f=" << f << endl;
 	// output string
-	cout << s << endl;
+	cout << "s=" << s << endl;
 }
