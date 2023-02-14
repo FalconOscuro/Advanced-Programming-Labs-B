@@ -3,6 +3,31 @@
 \begin{document}
     \section{The Bad Streaming Operator}
         \subsection*{Question:}
+            The streaming operator \mintinline{CPP}{>>} can be used on most fundamental types and standard objects like string. However, 
+            it can lead to unexpected issues when storing values into an array.\\
+
+            Test the following code, compiled for both debug and release targets and 
+            utilizing the debugger to view the state of varaible \mintinline{cpp}{c} in memory. \\
+    
+            \begin{minted}[autogobble]{cpp}
+                #include <iostream>
+                using namespace std;
+
+                int main(int argn, char* argv[])
+                {
+                    char c[5];
+                    cin >> c;
+                    cout << "c=" << c << endl;
+                }
+            \end{minted}
+
+            The \mintinline{cpp}{>>} streaming operator is great for storing values into different types, 
+            but it should be avoided to store values into an array.\\
+
+            Instead replace \mintinline{cpp}{cin >> c} with \mintinline{cpp}{cin.get(c, 5)}.\\
+            This code will store up to 4 values followed by the end of array character. 
+            Run your code as a normal Debug build and with the Debugger and inspect and document the values and see the output. 
+            The \mintinline{cpp}{get()} function is usually safer for storing multiple characters in an array that the \mintinline{cpp}{>>} operator.
             
         \subsection*{Solution:}
             \inputminted{cpp}{../02-Bad-Streaming/Bad-Streaming.cpp}%CPP file path here
