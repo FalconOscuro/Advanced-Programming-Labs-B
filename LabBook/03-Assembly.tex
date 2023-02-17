@@ -14,11 +14,16 @@
             showing how the optimizer has been at work.
 
         \subsection*{Solution:}
-            %CPP file path here
-
+            {\renewcommand\fcolorbox[4][]{\textcolor{cyan}{\strut#4}}
+                \inputminted{gas}{../03-Assembly/Assembly.txt}%CPP file path here
+            }
         \subsection*{Test Data:}
+            Not required.
         
         \subsection*{Sample Output:}
-
+            Not required.
         \subsection*{Reflection:}
+            My decision to use vscode made this considerably harder, but I managed to set up
+            the ghidra decompiler, this could be down to one of many factors such as linux, gcc or ghidra
+            but I did not notice a difference between release and debug targets at least within the main function.
 \end{document}
