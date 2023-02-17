@@ -1,0 +1,65 @@
+                             **************************************************************
+                             *                          FUNCTION                          *
+                             **************************************************************
+                             undefined main()
+             undefined         AL:1           <RETURN>
+             undefined4        Stack[-0xc]:4  local_c                                 XREF[1]:     001011e3(W)  
+             undefined4        Stack[-0x10]:4 local_10                                XREF[1]:     001011dc(W)  
+             undefined4        Stack[-0x14]:4 local_14                                XREF[4]:     001011f1(W), 
+                                                                                                   001011fa(R), 
+                                                                                                   00101200(RW), 
+                                                                                                   00101204(R)  
+             undefined4        Stack[-0x18]:4 local_18                                XREF[3]:     001011ea(W), 
+                                                                                                   001011fd(RW), 
+                                                                                                   00101226(R)  
+             undefined4        Stack[-0x1c]:4 local_1c                                XREF[1]:     001011d5(W)  
+             undefined8        Stack[-0x28]:8 local_28                                XREF[1]:     001011d8(W)  
+                             main                                            XREF[4]:     Entry Point(*), 
+                                                                                          _start:001010f8(*), 00102038, 
+                                                                                          001020e0(*)  
+        001011c9 f3 0f 1e fa     ENDBR64
+        001011cd 55              PUSH       RBP
+        001011ce 48 89 e5        MOV        RBP,RSP
+        001011d1 48 83 ec 20     SUB        RSP,0x20
+        001011d5 89 7d ec        MOV        dword ptr [RBP + local_1c],EDI
+        001011d8 48 89 75 e0     MOV        qword ptr [RBP + local_28],RSI
+        001011dc c7 45 f8        MOV        dword ptr [RBP + local_10],0x3
+                 03 00 00 00
+        001011e3 c7 45 fc        MOV        dword ptr [RBP + local_c],0xa
+                 0a 00 00 00
+        001011ea c7 45 f0        MOV        dword ptr [RBP + local_18],0x0
+                 00 00 00 00
+        001011f1 c7 45 f4        MOV        dword ptr [RBP + local_14],0x3
+                 03 00 00 00
+        001011f8 eb 0a           JMP        LAB_00101204
+                             LAB_001011fa                                    XREF[1]:     00101208(j)  
+        001011fa 8b 45 f4        MOV        EAX,dword ptr [RBP + local_14]
+        001011fd 01 45 f0        ADD        dword ptr [RBP + local_18],EAX
+        00101200 83 45 f4 01     ADD        dword ptr [RBP + local_14],0x1
+                             LAB_00101204                                    XREF[1]:     001011f8(j)  
+        00101204 83 7d f4 09     CMP        dword ptr [RBP + local_14],0x9
+        00101208 7e f0           JLE        LAB_001011fa
+        0010120a 48 8d 05        LEA        RAX,[s_Total=_00102004]                          = "Total= "
+                 f3 0d 00 00
+        00101211 48 89 c6        MOV        RSI=>s_Total=_00102004,RAX                       = "Total= "
+        00101214 48 8d 05        LEA        RAX,[std::cout]
+                 25 2e 00 00
+        0010121b 48 89 c7        MOV        RDI=>std::cout,RAX
+        0010121e e8 7d fe        CALL       <EXTERNAL>::std::operator<<                      basic_ostream * operator<<(basic
+                 ff ff
+        00101223 48 89 c2        MOV        RDX,RAX
+        00101226 8b 45 f0        MOV        EAX,dword ptr [RBP + local_18]
+        00101229 89 c6           MOV        ESI,EAX
+        0010122b 48 89 d7        MOV        RDI,RDX
+        0010122e e8 9d fe        CALL       <EXTERNAL>::std::basic_ostream<char,std::char_   undefined operator<<(basic_ostre
+                 ff ff
+        00101233 48 8b 15        MOV        RDX=><EXTERNAL>::std::endl<char,std::char_trai   = ??
+                 96 2d 00 00                                                                 = 00105000
+        0010123a 48 89 d6        MOV        RSI=><EXTERNAL>::std::endl<char,std::char_trai   = ??
+        0010123d 48 89 c7        MOV        RDI,RAX
+        00101240 e8 6b fe        CALL       <EXTERNAL>::std::basic_ostream<char,std::char_   undefined operator<<(basic_ostre
+                 ff ff
+        00101245 b8 00 00        MOV        EAX,0x0
+                 00 00
+        0010124a c9              LEAVE
+        0010124b c3              RET
