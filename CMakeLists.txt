@@ -1,4 +1,4 @@
-project(Lab-A LANGUAGES CXX)
+project(Lab-C LANGUAGES CXX)
 
 cmake_minimum_required(VERSION 3.16)
 
