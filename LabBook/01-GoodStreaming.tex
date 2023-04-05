@@ -2,35 +2,43 @@
 
 \begin{document}
     \section{The Good Streaming Operator}
-        \subsection*{Question:}
+        \subsection{Question}
         The code provided takes an integer and then a floating point number from the user and then displays the two numbers in the console window. \\
         
         This code creates an integer variable called \mintinline{cpp}{i} and a float variable called \mintinline{cpp}{f}. 
-        It then takes the user input from the console (cin) by storing two numbers from the user into the two variables. 
+        It then takes the user input from the console \mintinline{cpp}{cin} by storing two numbers from the user into the two variables. 
         The code then outputs to the console the values of the two variables. \\
         
-        Run this code and enter into the console window an integer followed by a space and then followed by a floating point number before pressing the return key (e.g. 23  4.567). 
+        Run this code and enter into the console window an integer followed by a space and then followed by a floating point number before pressing the return key (\textit{e.g. 23  4.567}). 
         The program should output the values of the two numbers.\\
 
-        Add a third variable that is a string type. You will need to add \mintinline{CPP}{#include <string>}.\\
+        \begin{itemize}
+            \item Add a third variable that is a string type. You will need to add \mintinline{CPP}{#include <string>}.
 
-        Take a string value from the user after you take the float value (the user can enter something like 23  4.586  Hello into the console window).\\
+            \item Take a string value from the user after you take the float value (\textit{the user can enter something like 23  4.586  Hello into the console window}).
 
-        Then output the string value to the console after you output the float value.\\
+            \item Then output the string value to the console after you output the float value.
+        \end{itemize}
             
-        \subsection*{Solution:}
-            \inputminted{cpp}{../Tasks/01-Good-Streaming/Good-Streaming.cpp}%CPP file path here
-
-        \subsection*{Test Data:}
+        \subsection{Test Data}
             Not required.
         
-        \subsection*{Sample Output:}
-            Enter an int and a float separated by a ' '(space): 34 98.6\\
-            Enter a string: asd\\
-            i=34, f=98.6\\
-            s=asd\\      
+        \subsection{Sample Output}
+            \noindent\textit{
+                Enter an int and a float separated by a ' '(space): 34 98.6\\
+                Enter a string: asd\\
+                i=34, f=98.6\\
+                s=asd\\
+            }
 
-        \subsection*{Reflection:}
+        \subsection{Reflection}
             The program works as expected, I was unaware multiple values could be taken
             from the input stream at once.
+        
+        \subsection{Solution}
+            \begin{listing}[H]
+                \inputminted{cpp}{../Tasks/01-Good-Streaming/Good-Streaming.cpp}%CPP file path here
+                \caption{Good-Streaming.cpp}
+            \end{listing}
+
 \end{document}
