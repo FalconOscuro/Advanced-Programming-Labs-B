@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int main(int argn, char* argv[])
+int main()
 {
 	cout << "Enter an int and a float separated by a ' '(space): ";
 	int i;

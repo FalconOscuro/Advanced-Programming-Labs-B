@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main(int argn, char* argv[])
+int main()
 {
    cout << "Enter a character string: ";
 
