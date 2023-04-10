@@ -1,70 +1,65 @@
-\documentclass[Lab-B.tex]{subfiles}
+\section{The Bad Streaming Operator}
+    \subsection*{Question}
+        The streaming operator \mintinline{CPP}{>>} can be used on most fundamental types and standard objects like string. However, 
+        it can lead to unexpected issues when storing values into an array.\\
 
-\begin{document}
-    \section{The Bad Streaming Operator}
-        \subsection{Question}
-            The streaming operator \mintinline{CPP}{>>} can be used on most fundamental types and standard objects like string. However, 
-            it can lead to unexpected issues when storing values into an array.\\
-
-            Test the following code, compiled for both debug and release targets and 
-            utilizing the debugger to view the state of varaible \mintinline{cpp}{c} in memory. \\
+        Test the following code, compiled for both debug and release targets and 
+        utilizing the debugger to view the state of varaible \mintinline{cpp}{c} in memory. \\
     
-            \begin{listing}[H]
-                \begin{minted}[autogobble]{cpp}
-                    #include <iostream>
-                    using namespace std;
+        \begin{listing}[H]
+            \begin{minted}[autogobble]{cpp}
+                #include <iostream>
+                using namespace std;
 
-                    int main(int argn, char* argv[])
-                    {
-                        char c[5];
-                        cin >> c;
-                        cout << "c=" << c << endl;
-                    }
-                \end{minted}
-                \caption{Test code}
-            \end{listing}
+                int main(int argn, char* argv[])
+                {
+                    char c[5];
+                    cin >> c;
+                    cout << "c=" << c << endl;
+                }
+            \end{minted}
+            \caption{Test code}
+        \end{listing}
 
-            The \mintinline{cpp}{>>} streaming operator is great for storing values into different types, 
-            but it should be avoided to store values into an array.\\
+        The \mintinline{cpp}{>>} streaming operator is great for storing values into different types, 
+        but it should be avoided to store values into an array.\\
 
-            Instead replace \mintinline{cpp}{cin >> c} with \mintinline{cpp}{cin.get(c, 5)}.
-            This code will store up to 4 values followed by the end of array character. 
-            Run your code as a normal Debug build and with the Debugger and inspect and document the values and see the output. 
-            The \mintinline{cpp}{get()} function is usually safer for storing multiple characters in an array that the \mintinline{cpp}{>>} operator.
+        Instead replace \mintinline{cpp}{cin >> c} with \mintinline{cpp}{cin.get(c, 5)}.
+        This code will store up to 4 values followed by the end of array character. 
+        Run your code as a normal Debug build and with the Debugger and inspect and document the values and see the output. 
+        The \mintinline{cpp}{get()} function is usually safer for storing multiple characters in an array that the \mintinline{cpp}{>>} operator.
             
-        \subsection{Test Data}
-            Not Required.
+    \subsection*{Test Data}
+        Not Required.
         
-        \subsection{Sample Output}
-            \begin{table}[H]
-                \centering
-                \begin{tabular}{c c}
-                    \hline
-                    \multicolumn{2}{c}{\textbf{unsafe}} \\
-                    \textbf{input} & \textbf{data stored} \\
-                    \hline
-                    asdfghj & 'a', 's', 'd', 'f', 'g' \\
-                    \\
-                    \hline
-                    \multicolumn{2}{c}{\textbf{safe}} \\
-                    \textbf{input} & \textbf{data stored} \\
-                    \hline
-                    asdfghj & 'a', 's', 'd', 'f', '\textbackslash000' \\
+    \subsection*{Sample Output}
+        \begin{table}[H]
+            \centering
+            \begin{tabular}{c c}
+                \hline
+                \multicolumn{2}{c}{\textbf{unsafe}} \\
+                \textbf{input} & \textbf{data stored} \\
+                \hline
+                asdfghj & 'a', 's', 'd', 'f', 'g' \\
+                \\
+                \hline
+                \multicolumn{2}{c}{\textbf{safe}} \\
+                \textbf{input} & \textbf{data stored} \\
+                \hline
+                asdfghj & 'a', 's', 'd', 'f', '\textbackslash000' \\
                     
-                \end{tabular}
-                \caption{Data in memory}
-            \end{table}
+            \end{tabular}
+            \caption{Data in memory}
+        \end{table}
 
-        \subsection*{Reflection:}
-            Writing beyond the bounds of assigned memory is known as stack smashing,
-            this causes data loss and undefined behaviour. Modern operating systems
-            have safeguards in place as this could be used as a method of attack,
-            using Ubuntu even with a debug release the process is immediately terminated.
+    \subsection**{Reflection:}
+        Writing beyond the bounds of assigned memory is known as stack smashing,
+        this causes data loss and undefined behaviour. Modern operating systems
+        have safeguards in place as this could be used as a method of attack,
+        using Ubuntu even with a debug release the process is immediately terminated.
         
-        \subsection{Solution}
-            \begin{listing}[H]
-                \inputminted{cpp}{../Tasks/02-Bad-Streaming/Bad-Streaming.cpp}%CPP file path here
-                \caption{Bad-Streaming.cpp}
-            \end{listing}
-
-\end{document}
+    \subsection*{Solution}
+        \begin{listing}[H]
+            \inputminted{cpp}{../Tasks/02-Bad-Streaming/Bad-Streaming.cpp}%CPP file path here
+            \caption{Bad-Streaming.cpp}
+        \end{listing}

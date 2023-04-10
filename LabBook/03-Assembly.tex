@@ -1,33 +1,29 @@
-\documentclass[Lab-B.tex]{subfiles}
+\section{Assembly}
+    \subsection*{Question}
+        Take the following code and decompile it into assembly language.
 
-\begin{document}
-    \section{Assembly}
-        \subsection{Question}
-            Take the following code and decompile it into assembly language.
+        \inputminted{cpp}{../Tasks/03-Assembly/Assembly.cpp}
 
-            \inputminted{cpp}{../Tasks/03-Assembly/Assembly.cpp}
+        Use the debugger to view both the registers and stack, 
+        running the decompiled code.\\
 
-            Use the debugger to view both the registers and stack, 
-            running the decompiled code.\\
+        Repeat this again with a release target \& notice the differences,
+        showing how the optimizer has been at work.
 
-            Repeat this again with a release target \& notice the differences,
-            showing how the optimizer has been at work.
-
-        \subsection{Test Data}
-            Not required.
+    \subsection*{Test Data}
+        Not required.
         
-        \subsection{Sample Output}
-            Not required.
-        \subsection{Reflection}
-            I used vscode as the IDE so had to use ghidra, an external decompiler.
-            There was no noticeable difference between the debug and release versions within the main function, 
-            this is likely down to my setup.
+    \subsection*{Sample Output}
+        Not required.
+    \subsection*{Reflection}
+        I used vscode as the IDE so had to use ghidra, an external decompiler.
+        There was no noticeable difference between the debug and release versions within the main function, 
+        this is likely down to my setup.
 
-        \subsection{Solution}
-            \begin{listing}[H]            
-                {\renewcommand\fcolorbox[4][]{\textcolor{cyan}{\strut#4}}
-                    \inputminted[fontsize=\tiny]{gas}{../Tasks/03-Assembly/Assembly.txt}
-                    \caption{Decompiled assembly}
-                }
-            \end{listing}
-\end{document}
+    \subsection*{Solution}
+        \begin{listing}[H]            
+            {\renewcommand\fcolorbox[4][]{\textcolor{cyan}{\strut#4}}
+                \inputminted[fontsize=\tiny]{gas}{../Tasks/03-Assembly/Assembly.txt}
+                \caption{Decompiled assembly}
+            }
+        \end{listing}
