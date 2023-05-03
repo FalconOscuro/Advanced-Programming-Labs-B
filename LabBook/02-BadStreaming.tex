@@ -28,9 +28,6 @@
         This code will store up to 4 values followed by the end of array character. 
         Run your code as a normal Debug build and with the Debugger and inspect and document the values and see the output. 
         The \mintinline{cpp}{get()} function is usually safer for storing multiple characters in an array that the \mintinline{cpp}{>>} operator.
-            
-    \subsection*{Test Data}
-        Not Required.
         
     \subsection*{Sample Output}
         \begin{table}[H]
@@ -52,7 +49,7 @@
             \caption{Data in memory}
         \end{table}
 
-    \subsection**{Reflection:}
+    \subsection*{Reflection}
         Writing beyond the bounds of assigned memory is known as stack smashing,
         this causes data loss and undefined behaviour. Modern operating systems
         have safeguards in place as this could be used as a method of attack,
